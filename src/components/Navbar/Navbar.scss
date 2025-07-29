@@ -23,8 +23,7 @@
         width: 200px;
 
         @media screen and (min-width:2000px) {
-            width: 180px;
-            height: 40px;
+            width: 240px;
         } 
     }
 }
@@ -85,12 +84,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--secondary-color);
+    
     
     svg {
-        width: 70%;
-        height: 70%;
-        color: var(--white-color);
+        width: 80%;
+        height: 80%;
+        color: var(--secondary-color);
+        cursor: pointer;
 
     }
 
@@ -119,10 +119,11 @@
         box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
 
         svg {
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
             color: var(--secondary-color);
             margin: 0.5rem 1rem;
+            cursor: pointer;
         }
 
         ul {
