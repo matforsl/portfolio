@@ -26,6 +26,8 @@ import about04 from '../assets/about04.png';
 import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
+import m_logo from '../assets/m_logo.png';
+import matilda_black from '../assets/matilda_black.png';
 
 import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
@@ -62,6 +64,8 @@ export default {
   profile,
   circle,
   logo,
+  m_logo,
+  matilda_black,
   adidas,
   amazon,
   asus,

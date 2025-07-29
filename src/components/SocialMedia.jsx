@@ -6,14 +6,20 @@ const SocialMedia = () => {
   return (
     <div className='app__social'>
         <div>
-            <FaLinkedinIn />
+            <a href="http://www.linkedin.com/in/matilda-forslund-76b9b3214" target="_blank" rel="noopener noreferrer">
+              <FaLinkedinIn />
+            </a>
         </div>
         <div>
-            <MdEmail />
+            <a href="mailto:matilda.forslund00@gmail.com" target="_blank" rel="noopener noreferrer">
+              <MdEmail />
+            </a>
         </div>
-        <div>
-            <FaGithub />
-        </div>
+        {/*<div>
+            <a href="mailto:matilda.forslund00@gmail.com" target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </a>
+        </div>*/}
     </div>
   )
 }

@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -20,8 +20,7 @@
     align-items: center;
 
     img {
-        width: 90px;
-        height:20px;
+        width: 200px;
 
         @media screen and (min-width:2000px) {
             width: 180px;
@@ -43,15 +42,6 @@
         cursor: pointer;
         flex-direction: column;
 
-        div {
-            width: 5px;
-            height: 5px;
-            background: transparent;
-            border-radius: 50%;
-
-            margin-bottom: 5px;
-        }
-
         a {
             color: var(--gray-color);
             text-decoration: none;
@@ -64,6 +54,14 @@
             &:hover {
                 color: var(--secondary-color);
             }
+        }
+
+        div {
+            width: 80%;
+            height: 1.5px;
+            background: transparent;
+
+            margin: 0.1rem 0;
         }
 
         &:hover {
