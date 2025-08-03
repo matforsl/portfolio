@@ -24,6 +24,7 @@ import about03 from '../assets/about03.png';
 import about04 from '../assets/about04.png';
 
 import profile from '../assets/profile.png';
+import profile_picture from '../assets/profile_picture.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
 import matilda_black from '../assets/matilda_black.png';
@@ -61,6 +62,7 @@ export default {
   about03,
   about04,
   profile,
+  profile_picture,
   circle,
   logo,
   matilda_black,
