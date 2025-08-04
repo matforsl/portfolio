@@ -1,73 +1,32 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { FaAngleDoubleDown } from "react-icons/fa"; 
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { images } from '../../constants';
 import './Header.scss';
-import {AppWrap} from '../../wrapper';
-
-const scaleVariants = {
-  whileInView: {
-    scale: [0, 1],
-    opacity: [0, 1],
-    transition: {
-      duration: 1,
-      ease: 'easeInOut'
-    }
-  }
-};
+import { easeOut, motion } from 'framer-motion';
 
 const Header = () => {
   return (
-    <div className='app__header app_flex'>
-      <motion.div
-        whileInView={{ x:[-100, 0], opacity:[0, 1]}}
-        transition={{ duration: 0.5}}
-        className='app__header-info'
-      >
-        <div className='app__header-badge'>
-          <div className='badge-cmp app__flex'>
-            <span>👋</span>
-            <div style={{ marginLeft: 20 }}>
-              <p className='p-text'>Hello, I am</p>
-              <h1 className='head-text'>Matilda</h1>
-            </div>
-          </div>
-          
-          <div className='tag-cmp app__flex'>
-            <p className='p-text'>UX/UI Designer</p>
-            <p className='p-text'>Web developer</p>
-          </div>
+    <div className='app__header' >
+        <img src={images.profile_picture} alt="profile" />
+        <div className='app__header-greeting'>
+            <h1>Hi, my name is <span>Matilda</span>.</h1>
+            <h1>I’m a <span>UX/UI Designer</span> and a <br /><span>Front-End Developer</span></h1>
         </div>
-      </motion.div>
-
-      <motion.div
-        whileInView={{ opacity:[0, 1]}}
-        transition={{ duration: 0.5, delayChildren:0.5}}
-        className='app__header-img'
-      >
-        <img src={images.profile} alt="profile_bg" />
-        <motion.img
-          whileInView={{ scale:[0, 1]}}
-          transition={{ duration: 1, ease: 'easeInOut'}}
-          src={images.circle}
-          alt='profile_circle'
-          className='overlay_circle'
-        />
-      </motion.div>
-      
-      <motion.div
-        variant={scaleVariants}
-        whileInView={scaleVariants.whileInView}
-        className='app__header-circles'
-      >
-        {[images.flutter, images.redux, images.sass].map((circle, index) => (
-          <div className="circle-cmp app__flex" key={`circle-${index}`}>
-            <img src={circle} alt="profile_bg" />
-          </div>
-        ))}
-      </motion.div>
-
+        <p>Scroll down to learn more</p>
+        <motion.div 
+            initial={{y:0}}
+            whileHover={{y: 10}}
+            transition={{duration: 0.3, ease: easeOut}}
+        >
+            <a href='#work'>
+                <FaAngleDoubleDown />
+            </a>
+        </motion.div>
     </div>
   )
-}
+};
 
-export default AppWrap(Header, 'home');
+export default AppWrap(
+    MotionWrap(Header, 'app__header'),
+    'home');
