@@ -27,6 +27,10 @@
             width: 240px;
         } 
     }
+
+    @media screen and (max-width:900px){
+        margin-left: 0;
+    }
 }
 
 .app__navbar-links {
