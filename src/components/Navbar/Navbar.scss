@@ -18,6 +18,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 3rem;
 
     img {
         width: 200px;
@@ -31,13 +32,14 @@
 .app__navbar-links {
     flex: 1; //takes up the rest of the space
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    margin-right: 3rem;
 
     list-style: none;
 
     li {
-        margin: 0 1rem;
+        margin: 0 2rem;
         cursor: pointer;
         flex-direction: column;
 
