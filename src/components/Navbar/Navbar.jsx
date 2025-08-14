@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { HashLink } from 'react-router-hash-link';
 import './Navbar.scss'
 import { images } from '../../constants'
 import { HiMenuAlt4, HiX} from 'react-icons/hi';
@@ -16,7 +17,7 @@ const Navbar = () => {
             <ul className='app__navbar-links'>
                 {['home', 'work', 'skills', 'contact'].map((item) => (
                     <li className='app__flex p-text' key={`link-${item}`}> 
-                        <a href={`#${item}`}>{item}</a>
+                        <HashLink smooth to={`/#${item}`}>{item}</HashLink>
                         <div />
                     </li>
                 ))}
@@ -34,7 +35,7 @@ const Navbar = () => {
                         <ul>
                             {['home', 'work', 'skills', 'contact'].map((item) => (
                             <li key={item}> 
-                                <a href={`#${item}`} onClick={() => setToggle(false)}>{item}</a>
+                                <HashLink smooth to={`/#${item}`} onClick={(() => setToggle(false))}>{item}</HashLink>
                             </li>
                             ))}
                         </ul>
