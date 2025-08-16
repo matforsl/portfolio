@@ -11,7 +11,7 @@ const Header = () => {
         <img src={images.profile_picture} alt="profile" />
         <div className='app__header-greeting'>
             <h1>Hi, my name is <span>Matilda</span>.</h1>
-            <h1>I’m a <span>UX/UI Designer</span> and a <br /><span>Front-End Developer</span></h1>
+            <h1>I’m a <span>UX/UI Designer</span> and a <br /><span>Developer</span></h1>
         </div>
         <p>Scroll down to learn more</p>
         <motion.div 
