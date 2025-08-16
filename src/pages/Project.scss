@@ -2,6 +2,14 @@
     width: 100%;
 }
 
+.app__project_message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 6rem;
+    height: 100vh;
+}
+
 .app__project-intro {
     display: flex;
     flex-direction: row;
