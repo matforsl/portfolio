@@ -11,6 +11,7 @@ const Work = () => {
   const [animateCard, setAnimateCard] = useState({y:0, opacity: 1});
   const [works, setWorks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [filterWork, setFilterWork] = useState([]);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ const Work = () => {
       })
       .catch((err) => {
         console.log(err);
+        setError(true);
         setFilterWork([]);
       })
       .finally(() => setLoading(false))
@@ -54,7 +56,7 @@ const Work = () => {
     <>
       <h2 className='head-text'>My <span>Portfolio </span>Section</h2>
       <div className='app__work-filter'>
-        {['UX/UI', 'Frontend', 'Backend', 'ML/AI', 'All'].map((item, index) => (
+        {['UX/UI', 'Web Dev', 'ML/AI', 'All'].map((item, index) => (
           <div 
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -73,31 +75,37 @@ const Work = () => {
           <p className='p-text'>Loading...</p>
         ):(
           <>
-            {filterWork.length === 0 ? (
-          <p className='p-text'>Oops! Something went wrong!</p>
-        ):(
-          <>
-            {filterWork.map((work, index) => (
-              <Link 
-                to={`/project/${work.slug?.current ?? ''}`}
-                key={work._id || index}
-              >
-                <div className='app__work-item app__flex' >
-                  <div className='app__work-img app__flex'>
-                    <img src={urlFor(work.imgUrl)} alt={work.name} />
-                  </div>
-                  <div className='app__work-content app__flex'>
-                    <h4 className='bold-text'>{work.title}</h4>
-                    <p className='p-text' style={{margin: 10}}>{work.description}</p>
-                    <div className='app__work-tag app__flex'>
-                      <p className='p-text'>{work.tags[0]}</p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </>
-        )}
+            {error ? (
+              <p className='p-text'>{'Oops! Something went wrong!'}</p>
+            ):(
+              <>
+                {filterWork.length === 0 ? (
+                  <p className='p-text'>No projects here (yet...)</p>
+                ):(
+                  <>
+                    {filterWork.map((work, index) => (
+                      <Link 
+                        to={`/project/${work.slug?.current ?? ''}`}
+                        key={work._id || index}
+                      >
+                        <div className='app__work-item app__flex' >
+                          <div className='app__work-img app__flex'>
+                            <img src={urlFor(work.imgUrl)} alt={work.name} />
+                          </div>
+                          <div className='app__work-content app__flex'>
+                            <h4 className='bold-text'>{work.title}</h4>
+                            <p className='p-text' style={{margin: 10}}>{work.description}</p>
+                            <div className='app__work-tag app__flex'>
+                              <p className='p-text'>{work.tags[0]}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </>
+                )}
+              </>
+            )}
           </>
         )}
       </motion.div>
