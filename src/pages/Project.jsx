@@ -95,7 +95,7 @@ const Project = () => {
                     
                     <div className='subsection'>
                         <h3>Overview</h3>
-                        <p>{project.overview}</p>
+                        <p style={{ whiteSpace: "pre-line" }}>{project.overview}</p>
                     </div>
 
                     {project.sections == null ? (
@@ -106,7 +106,7 @@ const Project = () => {
                             {project.sections.map((sectionObj, index) => (
                                 <div className='subsection' key={index}>
                                     <h3>{sectionObj.subheader}</h3>
-                                    <p>{sectionObj.body}</p>
+                                    <p style={{ whiteSpace: "pre-line" }}>{sectionObj.body}</p>
                                     <div className='app__project-info-sections-media'>
                                         {sectionObj.media ? (
                                             sectionObj.media.map((media, index) => (
@@ -120,6 +120,24 @@ const Project = () => {
                                             null
                                         )}
                                     </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    {project.links == null ? (
+                        null
+                    ):(
+                        <div className='subsection'>
+                            <h3>Links</h3>
+                            {project.links.map((linkObj, index) => (
+                                <div key={index}>
+                                    <p>
+                                        {linkObj.linkText + " "}
+                                        <a href={linkObj.linkAddress} target="_blank" rel="noopener noreferrer">
+                                            here
+                                        </a>
+                                    </p>
+                                    
                                 </div>
                             ))}
                         </div>
