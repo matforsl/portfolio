@@ -51,11 +51,11 @@ const Project = () => {
                         <p className='app__project-intro-text-desc p-text'>{project.description}</p>
                         <div className='app__project_intro-tags'>
                             {project.tags?.map((tag, index) => ( 
-                                <div>
+                                <div key={index}>
                                     { (tag === 'All') ? (
                                         null
                                     ):(
-                                        <p className='p-text' key={index}>{tag}</p>
+                                        <p className='p-text'>{tag}</p>
                                     )}
                                 </div>
                             ))}
