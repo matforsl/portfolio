@@ -113,7 +113,7 @@ const Project = () => {
                                                 media._type === "image" ? (
                                                         <img src={urlFor(media)} alt={`sectionImg${index}`} key={index}/>
                                                 ) : (
-                                                        <video controls src={media.asset.url} key={index}/>
+                                                        <video controls src={videoUrlFor(media)} key={index}/>
                                                 )
                                             ))
                                         ):(
