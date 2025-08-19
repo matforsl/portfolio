@@ -14,11 +14,19 @@ const Work = () => {
   const [error, setError] = useState(false);
   const [filterWork, setFilterWork] = useState([]);
 
+  const compareDate = (a, b) => {
+    if (b.date.year - a.date.year == 0){
+      return b.date.monthNum - a.date.monthNum;
+    }
+    return b.date.year - a.date.year;
+  }
+
   useEffect(() => {
     const query = `*[_type == "works"]{
       _id,
       title,
       description,
+      date,
       imgUrl,
       tags,
       slug
@@ -26,6 +34,7 @@ const Work = () => {
 
     client.fetch(query)
       .then((data) => {
+        data.sort(compareDate);
         setWorks(data);
         setFilterWork(data);
       })

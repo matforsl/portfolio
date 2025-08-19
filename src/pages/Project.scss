@@ -91,12 +91,16 @@
     @media screen and (max-width:900px){ 
         padding: 3rem 2rem;
     }
-}
+} 
 
 .app__project-info-bar {
+    margin-bottom: 3rem;
+}
+
+.app__project-info-bar-row {
     display: flex;
     flex-direction: row;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     @media screen and (max-width:450px){ 
         flex-direction: column;
         gap: 1rem;
@@ -113,6 +117,12 @@
 
 .app__project-info-bar-item {
     flex: 1;
+}
+
+.app__project-info-bar-item-long {
+    display: flex;
+    flex-direction: row;
+
 }
 
 .subsection {

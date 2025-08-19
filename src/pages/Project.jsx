@@ -9,6 +9,8 @@ const Project = () => {
     const [project, setProject] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const monthList = ['January','February','March','April','May','June','July','August','September','October','November','December']
     
     useEffect(() => {
         const query = `*[_type == "works" && slug.current == $slug][0]{
@@ -69,27 +71,37 @@ const Project = () => {
                 
             <div className='app__project-card'>
                 <div className='app__project-info'>
+
                     <div className='app__project-info-bar'>
+                        <div className='app__project-info-bar-row'>
+                            <div className='app__project-info-bar-item'>
+                                <h4>Date</h4>
+                                <p>{monthList[project.date.monthNum -1] + ", " + project.date.year}</p>
+                            </div>
 
-                        <div className='app__project-info-bar-item'>
-                            <h4>Role</h4>
-                            <p>{project.role}</p>
+                            <div className='app__project-info-bar-item'>
+                                <h4>Role</h4>
+                                <p>{project.role}</p>
+                            </div>
+
+                            <div className='app__project-info-bar-item'>
+                                <h4>Duration</h4>
+                                <p>{project.duration}</p>
+                            </div>
                         </div>
 
-                        <div className='app__project-info-bar-item'>
-                            <h4>Duration</h4>
-                            <p>{project.duration}</p>
-                        </div>
-
-                        <div className='app__project-info-bar-item'>
-                            {project.tags[0]==="UX/UI"?(
-                                <h4>Tools</h4>
-                            ):(
-                                <h4>Tech Stack</h4>
-                            )}
-                            {project.tools?.map((tool) => (
-                                <p key={tool}>{tool}</p>
-                            ))}
+                        <div className='app__project-info-bar-row'>
+                            <div className='app__project-info-bar-item'>
+                                {project.tags[0]==="UX/UI"?(
+                                    <h4>Tools</h4>
+                                ):(
+                                    <h4>Tech Stack</h4>
+                                )}
+                                <div className='app__project-info-bar-item-long'>
+                                    <p>{project.tools.join(', ')}</p>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
                     
