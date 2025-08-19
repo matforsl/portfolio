@@ -1,7 +1,6 @@
 # Portfolio Website
 
-![Portfolio Screenshot](./src/assets/screenshotWeb.png)  
-*A screenshot of the deployed portfolio site.*
+![Portfolio ](./src/assets/imageWeb.png)  
 
 ---
 
